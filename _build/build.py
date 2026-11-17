@@ -10,7 +10,7 @@ LOCAL_IMG = (ROOT / "assets" / "img").exists() and any((ROOT / "assets" / "img")
 REMOTE = "https://adidamari.co.il/wp-content/uploads/"
 
 RESUME = "https://drive.google.com/file/d/1dUDBJgoNw1x8Hw4QgFYmObVrlOSRtjmj/view"
-LINKEDIN = "https://www.linkedin.com/in/adi-elbom-dam-ari/"
+LINKEDIN = "https://www.linkedin.com/in/adi-elbom/"
 WHATSAPP = "https://api.whatsapp.com/send?phone=972507307688"
 EMAIL = "adi.elbom3@gmail.com"
 
