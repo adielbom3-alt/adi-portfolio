@@ -3,9 +3,14 @@ Run:  python3 _build/build.py      (from the site root)
 IMG is where images live. While images are still on the old WordPress site
 it points there; after they are copied into assets/img it becomes the local path.
 """
-import pathlib, sys
+import hashlib, pathlib, sys
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
+def _ver(rel):
+    """Short content hash so browsers load a fresh copy after every change."""
+    return hashlib.md5((ROOT / rel).read_bytes()).hexdigest()[:8]
+
+
 LOCAL_IMG = (ROOT / "assets" / "img").exists() and any((ROOT / "assets" / "img").iterdir())
 REMOTE = "https://adidamari.co.il/wp-content/uploads/"
 
@@ -48,7 +53,7 @@ def page(title, desc, body, depth, current=""):
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Red+Hat+Display:wght@300;400;500;600;700&family=Song+Myung&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="{up}assets/style.css">
+<link rel="stylesheet" href="{up}assets/style.css?v={_ver("assets/style.css")}">
 </head>
 <body>
 <div class="navholder">
@@ -94,7 +99,7 @@ def page(title, desc, body, depth, current=""):
     <a href="#top" onclick="window.scrollTo({{top:0,behavior:'smooth'}});return false;">Back to top ↑</a>
   </div>
 </footer>
-<script src="{up}assets/site.js"></script>
+<script src="{up}assets/site.js?v={_ver("assets/site.js")}"></script>
 </body>
 </html>
 """
