@@ -186,3 +186,26 @@
     img.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(img); } });
   });
 })();
+
+/* home: hello popup, once per visit */
+(function () {
+  var pop = document.getElementById('hello-pop');
+  if (!pop || window.matchMedia('(max-width: 760px)').matches) return;
+  var KEY = 'helloPopSeen', seen = false;
+  try { seen = sessionStorage.getItem(KEY) === '1'; } catch (e) {}
+  if (seen) return;
+  function close() {
+    pop.classList.remove('open');
+    try { sessionStorage.setItem(KEY, '1'); } catch (e) {}
+    setTimeout(function () { pop.hidden = true; }, 400);
+    document.removeEventListener('keydown', onKey);
+  }
+  function onKey(e) { if (e.key === 'Escape') close(); }
+  setTimeout(function () {
+    pop.hidden = false;
+    requestAnimationFrame(function () { requestAnimationFrame(function () { pop.classList.add('open'); }); });
+    document.addEventListener('keydown', onKey);
+  }, 2500);
+  pop.querySelector('.hello-close').addEventListener('click', close);
+  pop.querySelector('.hello-cta').addEventListener('click', close);
+})();

@@ -87,6 +87,20 @@ HOME = """
     </a>
   </section>
 </div>
+<aside class="hello-pop" id="hello-pop" role="dialog" aria-labelledby="hello-title" aria-describedby="hello-text" hidden>
+  <button class="hello-close" type="button" aria-label="Close">
+    <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+  </button>
+  <div class="hello-art" aria-hidden="true">
+    <svg class="hello-hi" viewBox="-6 -2 100 80" width="104" height="83">
+      <path class="hi-line" pathLength="1" d="M14 58C22 50 31 34 34 20C36 12 34 8 31 9C27 10 26 18 26 28L25 62C28 50 34 42 40 42C46 42 46 48 45 54C44 60 46 63 50 62C55 60 59 52 61 44C60 52 59 58 61 62C63 64 68 62 74 55"/>
+      <circle class="hi-dot" cx="62.5" cy="33" r="1.9"/>
+    </svg>
+  </div>
+  <h2 id="hello-title">Thanks for stopping by</h2>
+  <p id="hello-text">My newest projects aren’t on the site yet. If my work caught your eye, let’s talk and I’ll walk you through&nbsp;them.</p>
+  <a class="hello-cta" href="https://api.whatsapp.com/send?phone=972507307688" target="_blank" rel="noopener">Let’s connect</a>
+</aside>
 """
 
 NFT = """
