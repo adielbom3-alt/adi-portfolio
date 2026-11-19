@@ -36,7 +36,7 @@ HOME = """
         <path class="s s2" d="M14 6c.7 5.3 2.7 7.3 8 8-5.3.7-7.3 2.7-8 8-.7-5.3-2.7-7.3-8-8 5.3-.7 7.3-2.7 8-8Z"/>
         <path class="s s3" d="M18 38c.6 4.6 2.4 6.4 7 7-4.6.6-6.4 2.4-7 7-.6-4.6-2.4-6.4-7-7 4.6-.6 6.4-2.4 7-7Z"/>
       </svg></div>
-      <h1>Product designer at <b class="nb">WSC-Sports</b>, turning complex workflows into intuitive, <span class="nb">user-centered</span> experiences through thoughtful design, attention to detail, and a focus on business goals.</h1>
+      <h1>Product designer at <b class="nb">WSC-Sports</b>, turning complex workflows into intuitive experiences, and using AI to bring them to life, from concept to&nbsp;code.</h1>
     </div>
     <div class="hero-photo">
       <img src="{IMG}2025/09/profile-pic.png" alt="Adi Elbom" width="483" height="483">
@@ -375,7 +375,7 @@ MEDICAL = (MEDICAL
 NFT = NFT.replace("{FLOW_NFT}", nft_flow())
 
 PAGES = {
-    "index.html": ("Adi Elbom · Product Designer", "Product designer at WSC-Sports, turning complex workflows into intuitive, user-centered experiences.", 0, "work", HOME),
+    "index.html": ("Adi Elbom · Product Designer", "Product designer at WSC-Sports, turning complex workflows into intuitive experiences, and using AI to bring them to life, from concept to code.", 0, "work", HOME),
     "nft-admin/index.html": ("Blockchain Admin Platform · Adi Elbom", "Case study: a B2B admin platform for a blockchain donation marketplace, designed from scratch.", 1, "nft-admin", NFT),
     "money-transfer-platform/index.html": ("Money Transfer Platform · Adi Elbom", "Case study: a B2B money transfer and currency conversion platform for business clients.", 1, "money-transfer-platform", MONEY),
     "medical-students-app/index.html": ("Medical Students App · Adi Elbom", "Case study: a mobile-first learning app for medical interns at Sheba Medical Center.", 1, "medical-students-app", MEDICAL),
