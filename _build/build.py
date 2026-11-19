@@ -11,7 +11,7 @@ def _ver(rel):
     return hashlib.md5((ROOT / rel).read_bytes()).hexdigest()[:8]
 
 
-LOCAL_IMG = (ROOT / "assets" / "img").exists() and any((ROOT / "assets" / "img").iterdir())
+LOCAL_IMG = (ROOT / "assets" / "img" / "2025").exists()  # switch on once all WordPress images are copied in
 REMOTE = "https://adidamari.co.il/wp-content/uploads/"
 
 RESUME = "https://drive.google.com/file/d/1dUDBJgoNw1x8Hw4QgFYmObVrlOSRtjmj/view"
