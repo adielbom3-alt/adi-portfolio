@@ -1,4 +1,4 @@
-from flows import nft_flow, beneficiary_flow, pending_flow
+from flows import nft_flow, beneficiary_flow, pending_flow, nft_flow_mobile, beneficiary_flow_mobile, pending_flow_mobile
 
 _Y = '<td class="y" aria-label="Yes"><svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="8.5"/><path d="M6.5 10.2l2.3 2.3 4.7-4.8"/></svg></td>'
 _N = '<td class="n" aria-label="No"><svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="8.5"/><path d="M7.2 7.2l5.6 5.6M12.8 7.2l-5.6 5.6"/></svg></td>'
@@ -133,7 +133,7 @@ NFT = """
     <section class="chapter reveal">
       <p class="pill"><span class="n">03</span>User journey</p>
       <p class="statement">One flow in detail: building <em>collections and items</em> in a clear hierarchy, from draft to published.</p>
-      <figure class="flow"><div class="flow-scroll">{FLOW_NFT}</div><span class="flow-hint" aria-hidden="true"><span class="hint-mouse">Move across to explore</span><span class="hint-touch">Swipe to explore</span> →</span></figure>
+      <figure class="flow"><div class="flow-scroll">{FLOW_NFT}</div>{FLOW_NFT_M}<span class="flow-hint" aria-hidden="true"><span class="hint-mouse">Move across to explore</span><span class="hint-touch">Swipe to explore</span> →</span></figure>
       <p class="note">This is one use case of the full system. Feel free to contact me to learn more.</p>
     </section>
 
@@ -222,12 +222,12 @@ MONEY = """
     <section class="chapter reveal">
       <p class="pill"><span class="n">03</span>User journey</p>
       <p class="statement">Adding a beneficiary, with <em>back-office approval</em> before the first payment.</p>
-      <figure class="flow"><div class="flow-scroll">{FLOW_BEN}</div><span class="flow-hint" aria-hidden="true"><span class="hint-mouse">Move across to explore</span><span class="hint-touch">Swipe to explore</span> →</span></figure>
+      <figure class="flow"><div class="flow-scroll">{FLOW_BEN}</div>{FLOW_BEN_M}<span class="flow-hint" aria-hidden="true"><span class="hint-mouse">Move across to explore</span><span class="hint-touch">Swipe to explore</span> →</span></figure>
     </section>
 
     <section class="chapter sub reveal">
       <p class="statement">Pending requests: <em>approve, edit or reject</em> payments in one place.</p>
-      <figure class="flow"><div class="flow-scroll">{FLOW_PEND}</div><span class="flow-hint" aria-hidden="true"><span class="hint-mouse">Move across to explore</span><span class="hint-touch">Swipe to explore</span> →</span></figure>
+      <figure class="flow"><div class="flow-scroll">{FLOW_PEND}</div>{FLOW_PEND_M}<span class="flow-hint" aria-hidden="true"><span class="hint-mouse">Move across to explore</span><span class="hint-touch">Swipe to explore</span> →</span></figure>
       <p class="note">These are selected use cases of the full system. Feel free to contact me to learn more.</p>
     </section>
 
@@ -262,7 +262,7 @@ MONEY = (MONEY
   .replace("{MARQUEE}", marquee(_cols))
   .replace("{T1}", cmp_table(_cols, [("International transfers", "yyyy"), ("Payment management", "yyyy"), ("Exchange rates", "yyyy"), ("ERP integration", "ynyn"), ("Payment method support", "yyyy")]))
   .replace("{T2}", cmp_table(_cols, [("Tax &amp; compliance", "nnyy"), ("Self-service portal", "nnyy"), ("Multi-currency support", "yyyy"), ("Invoice automation", "nnyn"), ("Cryptocurrency support", "nnnn")]))
-  .replace("{FLOW_BEN}", beneficiary_flow()).replace("{FLOW_PEND}", pending_flow())
+  .replace("{FLOW_BEN}", beneficiary_flow()).replace("{FLOW_PEND}", pending_flow()).replace("{FLOW_BEN_M}", beneficiary_flow_mobile()).replace("{FLOW_PEND_M}", pending_flow_mobile())
   .replace("{FEATURES}", "\n".join([
       feat(1, "Home dashboard", [("{IMG}2025/05/open-2-2-2-scaled.png", "{IMG}2025/05/open-2-2-2.png", "Home dashboard")]),
       feat(2, "Beneficiaries · add &amp; pay", [("{IMG}2025/06/big-1-1-scaled.png", "{IMG}2025/06/big-1-1.png", "Beneficiaries list"), ("{IMG}2025/06/big-2-1.png", "", "Paying a beneficiary")]),
@@ -358,7 +358,7 @@ MEDICAL = (MEDICAL
   ])))
 
 
-NFT = NFT.replace("{FLOW_NFT}", nft_flow())
+NFT = NFT.replace("{FLOW_NFT}", nft_flow()).replace("{FLOW_NFT_M}", nft_flow_mobile())
 
 PAGES = {
     "index.html": ("Adi Elbom · Product Designer", "Product designer at WSC-Sports, turning complex workflows into intuitive, user-centered experiences.", 0, "work", HOME),
