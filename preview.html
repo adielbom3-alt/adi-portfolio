@@ -658,30 +658,30 @@ function reveal(){// Reveal sections as they scroll into view
   });
 })();
 
-/* home: hello popup, once per visit, after 2 minutes on the site (counted across pages) */
+/* home: hello popup.
+   Shows at most twice per visit: on the home page after a short read (FIRST_DELAY),
+   and once more when the visitor comes back to the home page after viewing a project (RETURN_DELAY). */
 (function () {
-  var DELAY = 120000, start = Date.now();
-  try {
-    var saved = parseInt(sessionStorage.getItem('visitStart'), 10);
-    if (saved) start = saved; else sessionStorage.setItem('visitStart', String(start));
-  } catch (e) {}
+  var FIRST_DELAY = 15000, RETURN_DELAY = 2000, MAX_SHOWS = 2;
+  function get(k) { try { return sessionStorage.getItem(k); } catch (e) { return null; } }
+  function set(k, v) { try { sessionStorage.setItem(k, v); } catch (e) {} }
   var pop = document.getElementById('hello-pop');
-  if (!pop || window.matchMedia('(max-width: 760px)').matches) return;
-  var KEY = 'helloPopSeen', seen = false;
-  try { seen = sessionStorage.getItem(KEY) === '1'; } catch (e) {}
-  if (seen) return;
+  if (!pop) { if (document.querySelector('.story')) set('helloSawProject', '1'); return; }
+  if (window.matchMedia('(max-width: 760px)').matches) return;
+  var shows = parseInt(get('helloShows') || '0', 10), sawProject = get('helloSawProject') === '1';
+  if (shows >= MAX_SHOWS || (shows > 0 && !sawProject)) return;
   function close() {
     pop.classList.remove('open');
-    try { sessionStorage.setItem(KEY, '1'); } catch (e) {}
     setTimeout(function () { pop.hidden = true; }, 400);
     document.removeEventListener('keydown', onKey);
   }
   function onKey(e) { if (e.key === 'Escape') close(); }
   setTimeout(function () {
+    set('helloShows', String(shows + 1)); set('helloSawProject', '0');
     pop.hidden = false;
     requestAnimationFrame(function () { requestAnimationFrame(function () { pop.classList.add('open'); }); });
     document.addEventListener('keydown', onKey);
-  }, Math.max(1500, DELAY - (Date.now() - start)));
+  }, sawProject ? RETURN_DELAY : FIRST_DELAY);
   pop.querySelector('.hello-close').addEventListener('click', close);
   pop.querySelector('.hello-cta').addEventListener('click', close);
 })();
