@@ -36,7 +36,7 @@ def localize_images(html, up):
     return re.sub(r"<img\b[^>]*>", fix, html)
 REMOTE = "https://adidamari.co.il/wp-content/uploads/"
 
-RESUME = "https://drive.google.com/file/d/1dUDBJgoNw1x8Hw4QgFYmObVrlOSRtjmj/view"
+RESUME = "resume.pdf"  # the PDF sits in the site root; replace the file to update it
 LINKEDIN = "https://www.linkedin.com/in/adi-elbom/"
 WHATSAPP = "https://api.whatsapp.com/send?phone=972507307688"
 EMAIL = "adi.elbom3@gmail.com"
@@ -88,7 +88,7 @@ def page(title, desc, body, depth, current=""):
           {dd_items}
         </div>
       </div>
-      <a href="{RESUME}" target="_blank" rel="noopener">Resume</a>
+      <a href="{up}{RESUME}" target="_blank" rel="noopener">Resume</a>
       <a class="hide-sm" href="{LINKEDIN}" target="_blank" rel="noopener">LinkedIn</a>
       <a class="cta" href="{WHATSAPP}" target="_blank" rel="noopener">Let’s chat</a>
     </div>
