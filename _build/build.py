@@ -35,7 +35,7 @@ def page(title, desc, body, depth, current=""):
         cur = ' aria-current="page" class="is-current"' if current == slug else ""
         return f'<a href="{up}{slug}/"{cur}><span class="dd-title">{title}</span></a>'
     dd_items = "\n          ".join([
-        item("nft-admin", "NFT Admin Platform", "SaaS · Admin · Blockchain"),
+        item("nft-admin", "Blockchain Admin Platform", "SaaS · Admin · Blockchain"),
         item("money-transfer-platform", "Money Transfer Platform", "SaaS · Mobile · Finance"),
         item("medical-students-app", "Medical Students App", "Mobile · Medical · Academy"),
         '<span class="dd-soon"><span class="dd-title">Animated Captions <span class="dd-note">· Coming soon</span></span></span>',

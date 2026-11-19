@@ -57,7 +57,7 @@ HOME = """
     </div>
 
     <a class="card reveal" href="{UP}nft-admin/">
-      <div class="card-media"><img src="{IMG}2025/10/Sarari-Dark-8889-scaled.png" alt="NFT admin platform dashboard" loading="lazy"></div>
+      <div class="card-media"><img src="{IMG}2025/10/Sarari-Dark-8889-scaled.png" alt="Blockchain admin platform dashboard" loading="lazy"></div>
       <div class="card-body">
         <span class="tag">SaaS • Admin • Blockchain</span>
         <h2>An admin marketplace platform from scratch</h2>
@@ -116,7 +116,7 @@ NFT = """
     </dl>
   </header>
 
-  <figure class="hero-shot own-frame"><img src="{UP}assets/media/nft-hero.webp" alt="NFT admin platform, dashboard overview" width="2400" height="1355"></figure>
+  <figure class="hero-shot own-frame"><img src="{UP}assets/media/nft-hero.webp" alt="Blockchain admin platform, dashboard overview" width="2400" height="1355"></figure>
 
   <section class="tldr">
     <article><p class="eyebrow">The challenge</p><p>Launch a blockchain donation experience with no existing reference, without losing the spirit of giving.</p></article>
@@ -157,19 +157,19 @@ NFT = """
       <div class="features">
         <article class="feature">
           <div class="feature-text"><h3><span class="fn">01</span>Home dashboard</h3></div>
-          <div class="feature-shots"><img src="{IMG}2024/12/Sarari-Dark-4.png" alt="Home dashboard" loading="lazy"></div>
+          <div class="feature-shots"><img src="{UP}assets/img/nft/home-dashboard-sm.webp" data-full="{UP}assets/img/nft/home-dashboard.webp" alt="Home dashboard" loading="lazy"></div>
         </article>
         <article class="feature">
           <div class="feature-text"><h3><span class="fn">02</span>Add &amp; view collections</h3></div>
-          <div class="feature-shots two"><img src="{IMG}2025/10/dddssss-scaled.png" data-full="{IMG}2025/10/dddssss.png" alt="Collections table" loading="lazy"><img src="{IMG}2025/10/aaa-scaled.png" data-full="{IMG}2025/10/aaa.png" alt="Collection detail" loading="lazy"></div>
+          <div class="feature-shots two"><img src="{UP}assets/img/nft/collections-sm.webp" data-full="{UP}assets/img/nft/collections.webp" alt="Collections table" loading="lazy"><img src="{UP}assets/img/nft/collection-details-sm.webp" data-full="{UP}assets/img/nft/collection-details.webp" alt="Collection details with associated items" loading="lazy"></div>
         </article>
         <article class="feature">
           <div class="feature-text"><h3><span class="fn">03</span>Add &amp; view items</h3></div>
-          <div class="feature-shots two"><img src="{IMG}2025/10/big-screen1-scaled.png" data-full="{IMG}2025/10/big-screen1.png" alt="Items table" loading="lazy"><img src="{IMG}2025/04/flow-nft.png" alt="Item creation flow" loading="lazy"></div>
+          <div class="feature-shots two"><img src="{UP}assets/img/nft/items-sm.webp" data-full="{UP}assets/img/nft/items.webp" alt="Items table" loading="lazy"><img src="{UP}assets/img/nft/new-item-sm.webp" data-full="{UP}assets/img/nft/new-item.webp" alt="Adding a new item" loading="lazy"></div>
         </article>
         <article class="feature">
-          <div class="feature-text"><h3><span class="fn">04</span>Donor lead · item purchase</h3></div>
-          <div class="feature-shots two"><img src="{IMG}2025/10/sssss-scaled.png" data-full="{IMG}2025/10/sssss.png" alt="Donor purchase completion" loading="lazy"><img src="{IMG}2024/12/sc5-2.png" alt="Purchase completion detail" loading="lazy"></div>
+          <div class="feature-text"><h3><span class="fn">04</span>Donor lead · Associate Items</h3></div>
+          <div class="feature-shots two"><img src="{UP}assets/img/nft/donors-sm.webp" data-full="{UP}assets/img/nft/donors.webp" alt="Donors table" loading="lazy"><img src="{UP}assets/img/nft/associate-items-sm.webp" data-full="{UP}assets/img/nft/associate-items.webp" alt="Associating items to a collection" loading="lazy"></div>
         </article>
       </div>
     </section>
@@ -356,7 +356,7 @@ MEDICAL = """
 
   <a class="next reveal" href="{UP}nft-admin/">
     <span class="eyebrow">Next case study</span>
-    <span class="title">NFT admin platform</span>
+    <span class="title">Blockchain admin platform</span>
     <span class="go">View case study {ARROW}</span>
   </a>
 </main>
@@ -376,7 +376,7 @@ NFT = NFT.replace("{FLOW_NFT}", nft_flow())
 
 PAGES = {
     "index.html": ("Adi Elbom · Product Designer", "Product designer at WSC-Sports, turning complex workflows into intuitive, user-centered experiences.", 0, "work", HOME),
-    "nft-admin/index.html": ("NFT Admin Platform · Adi Elbom", "Case study: a B2B admin platform for an NFT donation marketplace, designed from scratch.", 1, "nft-admin", NFT),
+    "nft-admin/index.html": ("Blockchain Admin Platform · Adi Elbom", "Case study: a B2B admin platform for a blockchain donation marketplace, designed from scratch.", 1, "nft-admin", NFT),
     "money-transfer-platform/index.html": ("Money Transfer Platform · Adi Elbom", "Case study: a B2B money transfer and currency conversion platform for business clients.", 1, "money-transfer-platform", MONEY),
     "medical-students-app/index.html": ("Medical Students App · Adi Elbom", "Case study: a mobile-first learning app for medical interns at Sheba Medical Center.", 1, "medical-students-app", MEDICAL),
 }

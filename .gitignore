@@ -4,3 +4,4 @@ _build/__pycache__/
 assets/_*.png
 assets/media/nft-hero.png
 /*.png
+_originals*/
