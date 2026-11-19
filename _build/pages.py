@@ -112,7 +112,7 @@ NFT = """
 
   <div class="story">
     <section class="chapter reveal">
-      <p class="pill"><span class="n">01</span>Exploring the problem</p>
+      <p class="pill"><span class="n" aria-hidden="true"></span>Exploring the problem</p>
       <p class="statement">We had to create a product from scratch, with <em>no references</em> for admin systems in the blockchain world, especially for donations.</p>
       <div class="duo"><img src="{IMG}2025/10/Frame-12436-scaled.webp" alt="Brainstorm board" loading="lazy"><img src="{IMG}2025/10/Frame-12435678-scaled.webp" alt="Research mapping" loading="lazy"></div>
     </section>
@@ -125,20 +125,20 @@ NFT = """
     </section>
 
     <section class="chapter band reveal">
-      <p class="pill"><span class="n">02</span>Key insights</p>
+      <p class="pill"><span class="n" aria-hidden="true"></span>Key insights</p>
       <p class="statement big">What the team needed most was to run it all <em>on their own.</em></p>
       <p class="support">The research pointed to one need above all: independence from developers. Full control over uploads and visibility, <span class="nb">real-time</span> reports, and drops timed to key dates, on a foundation <span class="nb">built to scale.</span></p>
     </section>
 
     <section class="chapter hide-mobile reveal">
-      <p class="pill"><span class="n">03</span>User journey</p>
+      <p class="pill"><span class="n" aria-hidden="true"></span>User journey</p>
       <p class="statement">One flow in detail: building <em>collections and items</em> in a clear hierarchy, from draft to published.</p>
       <figure class="flow"><div class="flow-scroll">{FLOW_NFT}</div><span class="flow-hint" aria-hidden="true"><span class="hint-mouse">Move across to explore</span><span class="hint-touch">Swipe to explore</span> →</span></figure>
       <p class="note">This is one use case of the full system. Feel free to contact me to learn more.</p>
     </section>
 
     <section class="chapter reveal">
-      <p class="pill"><span class="n">04</span>Visual design</p>
+      <p class="pill"><span class="n" aria-hidden="true"></span>Visual design</p>
       <p class="statement">A calm, minimal admin for the team, <em>a vivid marketplace</em> for donors.</p>
       <div class="features">
         <article class="feature">
@@ -161,7 +161,7 @@ NFT = """
     </section>
 
     <section class="chapter reveal">
-      <p class="pill"><span class="n">05</span>Impact</p>
+      <p class="pill"><span class="n" aria-hidden="true"></span>Impact</p>
       <p class="statement">Non-technical teams now create and manage NFTs <em>at scale</em>, on their own.</p>
       <ul class="results">
         <li><span class="big-num">27%</span><p class="eyebrow">Faster creation</p><h3>Time to complete the creation flow</h3><p>A step-by-step flow with live previews cut the average completion time (estimated).</p></li>
@@ -202,7 +202,7 @@ MONEY = """
 
   <div class="story">
     <section class="chapter reveal">
-      <p class="pill"><span class="n">01</span>Exploring the problem</p>
+      <p class="pill"><span class="n" aria-hidden="true"></span>Exploring the problem</p>
       <p class="statement">Building from scratch meant learning what business clients <em>expect from the best</em> in the market.</p>
     </section>
 
@@ -214,13 +214,13 @@ MONEY = """
     </section>
 
     <section class="chapter band reveal">
-      <p class="pill"><span class="n">02</span>Key insights</p>
+      <p class="pill"><span class="n" aria-hidden="true"></span>Key insights</p>
       <p class="statement big">Low fees aren’t enough. It has to be <em>easy to use.</em></p>
       <p class="support">Clients needed a real alternative to global fintechs: low fees with high usability, <span class="nb">real-time</span> monitoring, clear tracking of every transaction, and a smooth fit with their existing <span class="nb">financial systems.</span></p>
     </section>
 
     <section class="chapter hide-mobile reveal">
-      <p class="pill"><span class="n">03</span>User journey</p>
+      <p class="pill"><span class="n" aria-hidden="true"></span>User journey</p>
       <p class="statement">Adding a beneficiary, with <em>back-office approval</em> before the first payment.</p>
       <figure class="flow"><div class="flow-scroll">{FLOW_BEN}</div><span class="flow-hint" aria-hidden="true"><span class="hint-mouse">Move across to explore</span><span class="hint-touch">Swipe to explore</span> →</span></figure>
     </section>
@@ -232,7 +232,7 @@ MONEY = """
     </section>
 
     <section class="chapter reveal">
-      <p class="pill"><span class="n">04</span>Visual design</p>
+      <p class="pill"><span class="n" aria-hidden="true"></span>Visual design</p>
       <p class="statement">The company’s brand, <em>tuned for a financial tool</em>.</p>
       <div class="features">
 {FEATURES}
@@ -240,7 +240,7 @@ MONEY = """
     </section>
 
     <section class="chapter reveal">
-      <p class="pill"><span class="n">05</span>Key outcomes</p>
+      <p class="pill"><span class="n" aria-hidden="true"></span>Key outcomes</p>
       <p class="statement">Complex fund transfers became a <em>secure, self-service</em> platform.</p>
       <ul class="results">
         <li><span class="big-num">25%</span><p class="eyebrow">Estimated growth</p><h3>Higher engagement</h3><p>Business clients significantly increased their usage since launch.</p></li>
@@ -295,7 +295,7 @@ MEDICAL = """
 
   <div class="story">
     <section class="chapter reveal">
-      <p class="pill"><span class="n">01</span>Exploring the problem</p>
+      <p class="pill"><span class="n" aria-hidden="true"></span>Exploring the problem</p>
       <p class="statement">Interns need the <em>right content</em>, on their phone, in the few minutes they have.</p>
       <div class="duo">
         <img src="{IMG}2025/10/Frame-1243666-scaled.webp" alt="Research board: questions, UX and edge cases" loading="lazy">
@@ -311,7 +311,7 @@ MEDICAL = """
     </section>
 
     <section class="chapter band reveal">
-      <p class="pill"><span class="n">02</span>Key insights</p>
+      <p class="pill"><span class="n" aria-hidden="true"></span>Key insights</p>
       <p class="statement big">Every action had to fit <em>in a few taps.</em></p>
       <ul class="trio" style="--cols:4">
         <li><h3>Updates come first</h3><p>Real-time notifications from lecturers sit at the top of the home page, so nothing is missed between shifts.</p></li>
@@ -322,7 +322,7 @@ MEDICAL = """
     </section>
 
     <section class="chapter reveal">
-      <p class="pill"><span class="n">03</span>Visual design</p>
+      <p class="pill"><span class="n" aria-hidden="true"></span>Visual design</p>
       <p class="statement">A calm, focused app that <em>surfaces what’s next</em> for every intern.</p>
       <div class="features">
 {FEATURES}
@@ -330,7 +330,7 @@ MEDICAL = """
     </section>
 
     <section class="chapter reveal">
-      <p class="pill"><span class="n">04</span>Key outcomes</p>
+      <p class="pill"><span class="n" aria-hidden="true"></span>Key outcomes</p>
       <p class="statement">Better mobile access, easier navigation, <em>less admin work</em>.</p>
       <ul class="results">
         <li><span class="big-num">21%</span><p class="eyebrow">More mobile sessions</p><h3>Mobile sessions surge</h3><p>Students access study materials even during hospital shifts.</p></li>
