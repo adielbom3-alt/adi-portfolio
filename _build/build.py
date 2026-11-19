@@ -25,7 +25,16 @@ def page(title, desc, body, depth, current=""):
     up = "../" * depth
     img = (up + "assets/img/") if LOCAL_IMG else REMOTE
     body = body.replace("{IMG}", img).replace("{UP}", up).replace("{ARROW}", ARROW)
-    work_cls = ' class="current"' if current == "work" else ""
+    projects_cls = ' current' if current not in ("", "work") else ""
+    def item(slug, title, tags):
+        cur = ' aria-current="page" class="is-current"' if current == slug else ""
+        return f'<a href="{up}{slug}/"{cur}><span class="dd-title">{title}</span></a>'
+    dd_items = "\n          ".join([
+        item("nft-admin", "NFT Admin Platform", "SaaS · Admin · Blockchain"),
+        item("money-transfer-platform", "Money Transfer Platform", "SaaS · Mobile · Finance"),
+        item("medical-students-app", "Medical Students App", "Mobile · Medical · Academy"),
+        '<span class="dd-soon"><span class="dd-title">Animated Captions <span class="dd-note">· Coming soon</span></span></span>',
+    ])
     return f"""<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -46,7 +55,12 @@ def page(title, desc, body, depth, current=""):
   <nav class="site" aria-label="Main">
     <a class="brand" href="{up}">Adi Elbom.</a>
     <div class="navlinks">
-      <a href="{up}#work"{work_cls}>Work</a>
+      <div class="nav-dd">
+        <a class="dd-trigger{projects_cls}" href="{up}#work" aria-haspopup="true" aria-expanded="false">Projects <svg class="chev" width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M2 3.5 5 6.5 8 3.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <div class="dd" role="menu">
+          {dd_items}
+        </div>
+      </div>
       <a href="{RESUME}" target="_blank" rel="noopener">Resume</a>
       <a class="hide-sm" href="{LINKEDIN}" target="_blank" rel="noopener">LinkedIn</a>
       <a class="cta" href="{WHATSAPP}" target="_blank" rel="noopener">Let’s chat</a>

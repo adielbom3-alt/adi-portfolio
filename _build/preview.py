@@ -11,6 +11,7 @@ titles = {}
 for path,key in keys.items():
     html = (ROOT/path).read_text()
     body = re.search(r"<body>(.*)<script", html, re.S).group(1)
+    body = body.replace('"../assets/','"assets/')
     body = body.replace('href="../"','href="#home"').replace('href="./"','href="#home"')
     body = re.sub(r'href="(?:\.\./)*#work"','href="#work"',body)
     body = re.sub(r'href="(?:\.\./)*(nft-admin|money-transfer-platform|medical-students-app)/"',r'href="#\1"',body)

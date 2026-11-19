@@ -1,3 +1,5 @@
+from flows import nft_flow
+
 # Page sources. {IMG} = image folder, {UP} = path to site root, {ARROW} = arrow icon.
 
 HOME = """
@@ -66,9 +68,8 @@ HOME = """
 NFT = """
 <main class="wrap">
   <header class="cs-head">
-    <p class="eyebrow">Case study · SaaS · Admin · Blockchain</p>
-    <h1><span class="lt">An NFT admin platform,</span> <b>built from scratch</b></h1>
-    <p class="lede">A B2B admin system for a heritage organization selling digital collectibles to reach a younger, more diverse audience of donors.</p>
+    <h1><span class="lt">Heritage meets blockchain,</span> <b>an admin built from scratch</b></h1>
+    <p class="lede">Israel’s largest heritage organization wanted to reach younger donors with <span class="nb">limited-edition</span> digital collectibles. I&nbsp;designed the admin platform that gives their team full control, from the first collection to the final donation.</p>
     <dl class="meta">
       <div><dt>Role</dt><dd>Product Designer</dd></div>
       <div><dt>Team</dt><dd>PM, designer, project &amp; dev teams</dd></div>
@@ -77,93 +78,66 @@ NFT = """
     </dl>
   </header>
 
-  <figure class="hero-shot"><img src="{IMG}2025/10/Sarari-Dark-8889-scaled.png" alt="NFT admin platform, dashboard overview"></figure>
+  <figure class="hero-shot own-frame"><img src="{UP}assets/media/nft-hero.webp" alt="NFT admin platform, dashboard overview" width="2400" height="1355"></figure>
 
   <section class="tldr">
-    <article><p class="eyebrow">The challenge</p><p>How can a legacy organization launch an emotional, donation-based experience using cutting-edge NFT technology, with no existing reference, and without compromising the spirit of giving?</p></article>
-    <article><p class="eyebrow">The company</p><p>Israel’s largest organization for historical sites and artifacts, funded by donations, now selling digital items to reach a new generation of donors.</p></article>
+    <article><p class="eyebrow">The challenge</p><p>Launch a blockchain donation experience with no existing reference, without losing the spirit of giving.</p></article>
+    <article><p class="eyebrow">The company</p><p>Israel’s largest heritage organization, funded by donations and now reaching younger donors with digital collectibles.</p></article>
     <article><p class="eyebrow">The project</p><p>An admin system for item management, donor details, financial reports and donation approval, all run by an internal employee.</p></article>
   </section>
 
   <div class="story">
     <section class="chapter reveal">
       <p class="pill"><span class="n">01</span>Exploring the problem</p>
-      <p class="statement">We had to create a product from scratch, with <em>no references</em> for admin systems in the NFT world, especially for donations.</p>
-      <p class="support">We brainstormed before and during research, focusing on admin systems in NFT marketplaces and online stores to understand the hierarchy from collection to item.</p>
+      <p class="statement">We had to create a product from scratch, with <em>no references</em> for admin systems in the blockchain world, especially for donations.</p>
       <div class="duo"><img src="{IMG}2025/10/Frame-12436-scaled.webp" alt="Brainstorm board" loading="lazy"><img src="{IMG}2025/10/Frame-12435678-scaled.webp" alt="Research mapping" loading="lazy"></div>
     </section>
 
     <section class="chapter sub reveal">
       <p class="pill">Market research</p>
       <p class="support">We studied the admin systems of large online-marketplace platforms such as Shopify, Wix, Magento and BigCommerce to learn how they are built and which features work. Since we were starting from zero, this told us where to begin.</p>
-      <div class="duo framed"><div><img src="{IMG}2025/10/SSS.png" alt="Competitor analysis" loading="lazy"></div><div><img src="{IMG}2025/10/SS.png" alt="Competitor feature comparison" loading="lazy"></div></div>
+      <div class="marquee" aria-label="Platforms we studied: Shopify, Wix, BigCommerce, Magento"><div class="marquee-track" aria-hidden="true"><span>Shopify</span><span>Wix</span><span>BigCommerce</span><span>Magento</span><span>Shopify</span><span>Wix</span><span>BigCommerce</span><span>Magento</span><span>Shopify</span><span>Wix</span><span>BigCommerce</span><span>Magento</span><span>Shopify</span><span>Wix</span><span>BigCommerce</span><span>Magento</span></div></div>
+      <div class="cmp-grid"><div class="cmp-card"><table class="cmp"><thead><tr><th></th><th>Wix</th><th>BigCommerce</th><th>Shopify</th><th>Magento</th></tr></thead><tbody><tr><th scope="row">System &amp; settings</th><td class="n" aria-label="No"><svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="8.5"/><path d="M7.2 7.2l5.6 5.6M12.8 7.2l-5.6 5.6"/></svg></td><td class="n" aria-label="No"><svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="8.5"/><path d="M7.2 7.2l5.6 5.6M12.8 7.2l-5.6 5.6"/></svg></td><td class="n" aria-label="No"><svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="8.5"/><path d="M7.2 7.2l5.6 5.6M12.8 7.2l-5.6 5.6"/></svg></td><td class="y" aria-label="Yes"><svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="8.5"/><path d="M6.5 10.2l2.3 2.3 4.7-4.8"/></svg></td></tr><tr><th scope="row">Low-stock notifications</th><td class="n" aria-label="No"><svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="8.5"/><path d="M7.2 7.2l5.6 5.6M12.8 7.2l-5.6 5.6"/></svg></td><td class="y" aria-label="Yes"><svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="8.5"/><path d="M6.5 10.2l2.3 2.3 4.7-4.8"/></svg></td><td class="y" aria-label="Yes"><svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="8.5"/><path d="M6.5 10.2l2.3 2.3 4.7-4.8"/></svg></td><td class="y" aria-label="Yes"><svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="8.5"/><path d="M6.5 10.2l2.3 2.3 4.7-4.8"/></svg></td></tr><tr><th scope="row">Activity logs</th><td class="n" aria-label="No"><svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="8.5"/><path d="M7.2 7.2l5.6 5.6M12.8 7.2l-5.6 5.6"/></svg></td><td class="y" aria-label="Yes"><svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="8.5"/><path d="M6.5 10.2l2.3 2.3 4.7-4.8"/></svg></td><td class="n" aria-label="No"><svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="8.5"/><path d="M7.2 7.2l5.6 5.6M12.8 7.2l-5.6 5.6"/></svg></td><td class="y" aria-label="Yes"><svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="8.5"/><path d="M6.5 10.2l2.3 2.3 4.7-4.8"/></svg></td></tr><tr><th scope="row">Scheduled drops</th><td class="y" aria-label="Yes"><svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="8.5"/><path d="M6.5 10.2l2.3 2.3 4.7-4.8"/></svg></td><td class="y" aria-label="Yes"><svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="8.5"/><path d="M6.5 10.2l2.3 2.3 4.7-4.8"/></svg></td><td class="y" aria-label="Yes"><svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="8.5"/><path d="M6.5 10.2l2.3 2.3 4.7-4.8"/></svg></td><td class="n" aria-label="No"><svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="8.5"/><path d="M7.2 7.2l5.6 5.6M12.8 7.2l-5.6 5.6"/></svg></td></tr><tr><th scope="row">Editing items</th><td class="y" aria-label="Yes"><svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="8.5"/><path d="M6.5 10.2l2.3 2.3 4.7-4.8"/></svg></td><td class="y" aria-label="Yes"><svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="8.5"/><path d="M6.5 10.2l2.3 2.3 4.7-4.8"/></svg></td><td class="y" aria-label="Yes"><svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="8.5"/><path d="M6.5 10.2l2.3 2.3 4.7-4.8"/></svg></td><td class="y" aria-label="Yes"><svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="8.5"/><path d="M6.5 10.2l2.3 2.3 4.7-4.8"/></svg></td></tr></tbody></table></div><div class="cmp-card"><table class="cmp"><thead><tr><th></th><th>Wix</th><th>BigCommerce</th><th>Shopify</th><th>Magento</th></tr></thead><tbody><tr><th scope="row">Real-time data dashboard</th><td class="n" aria-label="No"><svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="8.5"/><path d="M7.2 7.2l5.6 5.6M12.8 7.2l-5.6 5.6"/></svg></td><td class="y" aria-label="Yes"><svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="8.5"/><path d="M6.5 10.2l2.3 2.3 4.7-4.8"/></svg></td><td class="y" aria-label="Yes"><svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="8.5"/><path d="M6.5 10.2l2.3 2.3 4.7-4.8"/></svg></td><td class="y" aria-label="Yes"><svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="8.5"/><path d="M6.5 10.2l2.3 2.3 4.7-4.8"/></svg></td></tr><tr><th scope="row">Collection, category, item</th><td class="y" aria-label="Yes"><svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="8.5"/><path d="M6.5 10.2l2.3 2.3 4.7-4.8"/></svg></td><td class="y" aria-label="Yes"><svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="8.5"/><path d="M6.5 10.2l2.3 2.3 4.7-4.8"/></svg></td><td class="n" aria-label="No"><svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="8.5"/><path d="M7.2 7.2l5.6 5.6M12.8 7.2l-5.6 5.6"/></svg></td><td class="n" aria-label="No"><svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="8.5"/><path d="M7.2 7.2l5.6 5.6M12.8 7.2l-5.6 5.6"/></svg></td></tr><tr><th scope="row">Real-time orders &amp; reports</th><td class="y" aria-label="Yes"><svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="8.5"/><path d="M6.5 10.2l2.3 2.3 4.7-4.8"/></svg></td><td class="y" aria-label="Yes"><svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="8.5"/><path d="M6.5 10.2l2.3 2.3 4.7-4.8"/></svg></td><td class="y" aria-label="Yes"><svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="8.5"/><path d="M6.5 10.2l2.3 2.3 4.7-4.8"/></svg></td><td class="y" aria-label="Yes"><svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="8.5"/><path d="M6.5 10.2l2.3 2.3 4.7-4.8"/></svg></td></tr><tr><th scope="row">User information</th><td class="n" aria-label="No"><svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="8.5"/><path d="M7.2 7.2l5.6 5.6M12.8 7.2l-5.6 5.6"/></svg></td><td class="y" aria-label="Yes"><svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="8.5"/><path d="M6.5 10.2l2.3 2.3 4.7-4.8"/></svg></td><td class="y" aria-label="Yes"><svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="8.5"/><path d="M6.5 10.2l2.3 2.3 4.7-4.8"/></svg></td><td class="y" aria-label="Yes"><svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="8.5"/><path d="M6.5 10.2l2.3 2.3 4.7-4.8"/></svg></td></tr><tr><th scope="row">Marketing &amp; analytics</th><td class="y" aria-label="Yes"><svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="8.5"/><path d="M6.5 10.2l2.3 2.3 4.7-4.8"/></svg></td><td class="y" aria-label="Yes"><svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="8.5"/><path d="M6.5 10.2l2.3 2.3 4.7-4.8"/></svg></td><td class="n" aria-label="No"><svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="8.5"/><path d="M7.2 7.2l5.6 5.6M12.8 7.2l-5.6 5.6"/></svg></td><td class="y" aria-label="Yes"><svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="8.5"/><path d="M6.5 10.2l2.3 2.3 4.7-4.8"/></svg></td></tr></tbody></table></div></div>
     </section>
 
-    <section class="chapter reveal">
+    <section class="chapter band reveal">
       <p class="pill"><span class="n">02</span>Key insights</p>
-      <p class="statement big">Give staff <em>full control</em>, without relying on developers.</p>
-      <ul class="trio" style="--cols:4">
-        <li><h3>Own the storefront</h3><p>Full control over item uploads and storefront visibility, without developers.</p></li>
-        <li><h3>Real-time data</h3><p>Live data and exportable reports to evaluate engagement and impact.</p></li>
-        <li><h3>Drops that build hype</h3><p>Limited-edition NFT drops to raise anticipation around key dates.</p></li>
-        <li><h3>Built to scale</h3><p>A flexible foundation for future holidays and global donors.</p></li>
-      </ul>
+      <p class="statement big">What the team needed most was to run it all <em>on their own.</em></p>
+      <p class="support">The research pointed to one need above all: independence from developers. Full control over uploads and visibility, <span class="nb">real-time</span> reports, and drops timed to key dates, on a foundation <span class="nb">built to scale.</span></p>
     </section>
 
     <section class="chapter reveal">
       <p class="pill"><span class="n">03</span>User journey</p>
-      <p class="statement">One flow in detail: creating <em>collections and items</em>.</p>
-      <p class="support">The flow guides the user through crafting historical items, categorizing them accurately, and organizing the catalog, collections and items in a clear hierarchy, so the collections stay complete and easy to navigate.</p>
-      <figure class="shot framed"><img src="{IMG}2025/03/Group-1000004770-1.png" alt="User flow for collections and items" loading="lazy"></figure>
+      <p class="statement">One flow in detail: building <em>collections and items</em> in a clear hierarchy, from draft to published.</p>
+      <figure class="flow"><div class="flow-scroll">{FLOW_NFT}</div><span class="flow-hint" aria-hidden="true"><span class="hint-mouse">Move across to explore</span><span class="hint-touch">Swipe to explore</span> →</span></figure>
       <p class="note">This is one use case of the full system. Feel free to contact me to learn more.</p>
     </section>
 
     <section class="chapter reveal">
-      <p class="pill"><span class="n">04</span>Wireframing</p>
-      <p class="statement">From hand sketches to <em>high-fidelity</em> wireframes.</p>
-      <p class="support">After exploring directions in hand sketches, I moved to high-fidelity wireframes of the key screens: the dashboard and the donor purchase completion flow.</p>
-      <div class="screens">
-        <figure><img src="{IMG}2024/12/sc13.png" alt="Dashboard wireframe" loading="lazy"><figcaption><b>Home dashboard</b>Real-time user tracking, top NFT items, key data highlights and a donations graph over time.</figcaption></figure>
-        <figure><img src="{IMG}2024/12/%D7%A1%D7%A1%D7%A1%D7%A1.png" alt="Edit NFT item wireframe" loading="lazy"><figcaption><b>Editing an NFT item</b>Adding item characteristics and viewing the item’s activity.</figcaption></figure>
-        <figure><img src="{IMG}2024/12/sc14.png" alt="Donor profile wireframe" loading="lazy"><figcaption><b>Donor profile</b>The donor’s item activity and finalizing a winning item.</figcaption></figure>
-        <figure><img src="{IMG}2024/09/ux-5.png" alt="NFT item preview pop-up wireframe" loading="lazy"><figcaption><b>Donor profile · item preview</b>A preview pop-up of an NFT item.</figcaption></figure>
-        <figure><img src="{IMG}2024/12/sss.png" alt="Donation completion wireframe" loading="lazy"><figcaption><b>Complete donation</b>The first step in finalizing a won NFT item.</figcaption></figure>
+      <p class="pill"><span class="n">04</span>Visual design</p>
+      <p class="statement">A calm, minimal admin for the team, <em>a vivid marketplace</em> for donors.</p>
+      <div class="features">
+        <article class="feature">
+          <div class="feature-text"><h3><span class="fn">01</span>Home dashboard</h3></div>
+          <div class="feature-shots"><img src="{IMG}2024/12/Sarari-Dark-4.png" alt="Home dashboard" loading="lazy"></div>
+        </article>
+        <article class="feature">
+          <div class="feature-text"><h3><span class="fn">02</span>Add &amp; view collections</h3></div>
+          <div class="feature-shots two"><img src="{IMG}2025/10/dddssss-scaled.png" data-full="{IMG}2025/10/dddssss.png" alt="Collections table" loading="lazy"><img src="{IMG}2025/10/aaa-scaled.png" data-full="{IMG}2025/10/aaa.png" alt="Collection detail" loading="lazy"></div>
+        </article>
+        <article class="feature">
+          <div class="feature-text"><h3><span class="fn">03</span>Add &amp; view items</h3></div>
+          <div class="feature-shots two"><img src="{IMG}2025/10/big-screen1-scaled.png" data-full="{IMG}2025/10/big-screen1.png" alt="Items table" loading="lazy"><img src="{IMG}2025/04/flow-nft.png" alt="Item creation flow" loading="lazy"></div>
+        </article>
+        <article class="feature">
+          <div class="feature-text"><h3><span class="fn">04</span>Donor lead · item purchase</h3></div>
+          <div class="feature-shots two"><img src="{IMG}2025/10/sssss-scaled.png" data-full="{IMG}2025/10/sssss.png" alt="Donor purchase completion" loading="lazy"><img src="{IMG}2024/12/sc5-2.png" alt="Purchase completion detail" loading="lazy"></div>
+        </article>
       </div>
     </section>
 
     <section class="chapter reveal">
-      <p class="pill"><span class="n">05</span>Visual design</p>
-      <p class="statement">Minimal admin, <em>bright NFT world</em>.</p>
-      <p class="support">With the team and the client, we chose a minimalistic UI built on shades of the company’s primary logo color plus a complementary accent. The marketplace leans into the NFT world: bright colors on a dark-mode base.</p>
-      <figure class="shot"><img src="{IMG}2025/10/12-scaled.png" alt="Design system" loading="lazy"></figure>
-    </section>
-
-    <section class="chapter reveal">
-      <p class="pill">The final screens</p>
-      <p class="support">Representative use cases the internal team performs every day.</p>
-      <figure class="scene">
-        <img src="{IMG}2024/12/Sarari-Dark-4.png" alt="Home dashboard" loading="lazy">
-        <figcaption class="scene-band"><h3>Home dashboard</h3><p>Summarizes everything coming in from the marketplace: number of users, returning donors who bought multiple items, the most popular items, and a trend graph over time.</p></figcaption>
-      </figure>
-      <figure class="scene">
-        <img src="{IMG}2025/10/dddssss-scaled.webp" alt="Collections table" loading="lazy">
-        <figcaption class="scene-band"><h3>Add &amp; view collections</h3><p>All collections in one table: open, edit, attach items, and publish or deactivate a collection in the marketplace in one click.</p></figcaption>
-        <div class="extra"><img src="{IMG}2025/10/aaa-scaled.webp" alt="Collection detail" loading="lazy"></div>
-      </figure>
-      <figure class="scene">
-        <img src="{IMG}2025/10/big-screen1-scaled.webp" alt="Items table" loading="lazy">
-        <figcaption class="scene-band"><h3>Add &amp; view items</h3><p>Every item with its main information: open, edit, remove from the marketplace, or turn it back into a draft.</p></figcaption>
-        <div class="extra"><img src="{IMG}2025/04/flow-nft.png" alt="Item creation flow" loading="lazy"></div>
-      </figure>
-      <figure class="scene">
-        <img src="{IMG}2025/10/sssss-scaled.webp" alt="Donor purchase completion" loading="lazy">
-        <figcaption class="scene-band"><h3>Donor lead · NFT item purchase</h3><p>The marketplace ran on NFT drops and raffles, so each winner had a final transaction to complete. This is how that process looks.</p></figcaption>
-        <div class="extra"><img src="{IMG}2024/12/sc5-2.png" alt="Purchase completion detail" loading="lazy"></div>
-      </figure>
-    </section>
-
-    <section class="chapter reveal">
-      <p class="pill"><span class="n">06</span>Impact</p>
+      <p class="pill"><span class="n">05</span>Impact</p>
       <p class="statement">Non-technical teams now create and manage NFTs <em>at scale</em>, on their own.</p>
       <ul class="results">
         <li><span class="big-num">27%</span><p class="eyebrow">Faster creation</p><h3>Time to complete the creation flow</h3><p>A step-by-step flow with live previews cut the average completion time (estimated).</p></li>
@@ -184,7 +158,6 @@ NFT = """
 MONEY = """
 <main class="wrap">
   <header class="cs-head">
-    <p class="eyebrow">Case study · SaaS · Mobile · Finance</p>
     <h1><span class="lt">Money transfers for business,</span> <b>without the friction</b></h1>
     <p class="lede">A B2B platform where business users manage funds through transfers and currency conversions, track operations from one dashboard, and export reports.</p>
     <dl class="meta">
@@ -325,7 +298,6 @@ MONEY = """
 MEDICAL = """
 <main class="wrap">
   <header class="cs-head">
-    <p class="eyebrow">Case study · Mobile · Medical · Academy</p>
     <h1><span class="lt">Learning that fits</span> <b>between hospital shifts</b></h1>
     <p class="lede">A mobile-first app for Sheba Medical Center’s interns: daily updates, exams and assignments, and a library of educational videos in one place.</p>
     <dl class="meta">
@@ -424,9 +396,11 @@ MEDICAL = """
 </main>
 """
 
+NFT = NFT.replace("{FLOW_NFT}", nft_flow())
+
 PAGES = {
     "index.html": ("Adi Elbom · Product Designer", "Product designer at WSC-Sports, turning complex workflows into intuitive, user-centered experiences.", 0, "work", HOME),
-    "nft-admin/index.html": ("NFT Admin Platform · Adi Elbom", "Case study: a B2B admin platform for an NFT donation marketplace, designed from scratch.", 1, "", NFT),
-    "money-transfer-platform/index.html": ("Money Transfer Platform · Adi Elbom", "Case study: a B2B money transfer and currency conversion platform for business clients.", 1, "", MONEY),
-    "medical-students-app/index.html": ("Medical Students App · Adi Elbom", "Case study: a mobile-first learning app for medical interns at Sheba Medical Center.", 1, "", MEDICAL),
+    "nft-admin/index.html": ("NFT Admin Platform · Adi Elbom", "Case study: a B2B admin platform for an NFT donation marketplace, designed from scratch.", 1, "nft-admin", NFT),
+    "money-transfer-platform/index.html": ("Money Transfer Platform · Adi Elbom", "Case study: a B2B money transfer and currency conversion platform for business clients.", 1, "money-transfer-platform", MONEY),
+    "medical-students-app/index.html": ("Medical Students App · Adi Elbom", "Case study: a mobile-first learning app for medical interns at Sheba Medical Center.", 1, "medical-students-app", MEDICAL),
 }
