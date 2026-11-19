@@ -1,9 +1,11 @@
 """Builds the static site from the page sources in this folder.
 Run:  python3 _build/build.py      (from the site root)
-IMG is where images live. While images are still on the old WordPress site
-it points there; after they are copied into assets/img it becomes the local path.
+Images live in assets/img as WebP (see localize_images); {IMG} links fall back
+to the old WordPress site only if a local copy is missing.
 """
-import hashlib, pathlib, sys
+import hashlib
+import re, pathlib, sys
+from urllib.parse import unquote
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 def _ver(rel):
@@ -11,7 +13,27 @@ def _ver(rel):
     return hashlib.md5((ROOT / rel).read_bytes()).hexdigest()[:8]
 
 
-LOCAL_IMG = (ROOT / "assets" / "img" / "2025").exists()  # switch on once all WordPress images are copied in
+IMG_DIR = ROOT / "assets" / "img"
+
+
+def localize_images(html, up):
+    """Point each {IMG} picture at its light local WebP copy (assets/img/<path>.webp
+    plus a smaller -sm.webp for the page). Anything without a local copy stays on WordPress."""
+    def fix(m):
+        tag = m.group(0)
+        full = re.search(r'data-full="\{IMG\}([^"]+)"', tag)
+        src = re.search(r'src="\{IMG\}([^"]+)"', tag)
+        if not src:
+            return tag
+        key = (full or src).group(1)
+        stem = unquote(key.rsplit(".", 1)[0]).replace("\u2013", "-")
+        if not full and stem.endswith("-scaled") and (IMG_DIR / (stem[:-7] + ".webp")).exists():
+            stem = stem[:-7]
+        if not (IMG_DIR / (stem + ".webp")).exists():
+            return tag
+        tag = re.sub(r'\sdata-full="[^"]*"', "", tag)
+        return tag.replace(src.group(0), f'src="{up}assets/img/{stem}-sm.webp" data-full="{up}assets/img/{stem}.webp"')
+    return re.sub(r"<img\b[^>]*>", fix, html)
 REMOTE = "https://adidamari.co.il/wp-content/uploads/"
 
 RESUME = "https://drive.google.com/file/d/1dUDBJgoNw1x8Hw4QgFYmObVrlOSRtjmj/view"
@@ -28,8 +50,8 @@ ARROW = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="cur
 
 def page(title, desc, body, depth, current=""):
     up = "../" * depth
-    img = (up + "assets/img/") if LOCAL_IMG else REMOTE
-    body = body.replace("{IMG}", img).replace("{UP}", up).replace("{ARROW}", ARROW)
+    body = localize_images(body, up)
+    body = body.replace("{IMG}", REMOTE).replace("{UP}", up).replace("{ARROW}", ARROW)
     projects_cls = ' current' if current not in ("", "work") else ""
     def item(slug, title, tags):
         cur = ' aria-current="page" class="is-current"' if current == slug else ""
@@ -113,4 +135,4 @@ for path, (title, desc, depth, current, body) in PAGES.items():
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(page(title, desc, body, depth, current), encoding="utf-8")
     print("wrote", out.relative_to(ROOT))
-print("images:", "local assets/img" if LOCAL_IMG else "linked from adidamari.co.il")
+print("images still on WordPress:", sum(open(ROOT / f, encoding="utf-8").read().count(REMOTE) for f in PAGES))
