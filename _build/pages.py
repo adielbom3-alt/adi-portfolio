@@ -16,9 +16,9 @@ def marquee(names):
             + ''.join('<span>' + n + '</span>' for _ in range(4) for n in names) + '</div></div>')
 
 
-def feat(n, title, imgs, phones=False):
+def feat(n, title, imgs, phones=False, trim_mobile=False):
     shots = ''.join(f'<img src="{src}"' + (f' data-full="{full}"' if full else '') + f' alt="{alt}" loading="lazy">' for src, full, alt in imgs)
-    cls = "feature-shots phones-shots" if phones else ("feature-shots two" if len(imgs) == 2 else "feature-shots")
+    cls = ("feature-shots phones-shots" + (" trim-mobile" if trim_mobile else "")) if phones else ("feature-shots two" if len(imgs) == 2 else "feature-shots")
     style = f' style="--n:{len(imgs)}"' if phones else ""
     return (f'        <article class="feature">\n          <div class="feature-text"><h3><span class="fn">{n:02d}</span>{title}</h3></div>\n'
             f'          <div class="{cls}"{style}>{shots}</div>\n        </article>')
@@ -268,7 +268,7 @@ MONEY = (MONEY
       feat(2, "Beneficiaries · add &amp; pay", [("{IMG}2025/06/big-1-1-scaled.png", "{IMG}2025/06/big-1-1.png", "Beneficiaries list"), ("{IMG}2025/06/big-2-1.png", "", "Paying a beneficiary")]),
       feat(3, "Pending requests", [("{IMG}2025/06/big-3-scaled.png", "{IMG}2025/06/big-3.png", "Pending requests"), ("{IMG}2025/06/big-4-scaled.png", "{IMG}2025/06/big-4.png", "Pending request details")]),
       feat(4, "Activity", [("{IMG}2025/06/big-5-scaled.png", "{IMG}2025/06/big-5.png", "Activity"), ("{IMG}2025/06/big-6-scaled.png", "{IMG}2025/06/big-6.png", "Activity filters")]),
-      feat(5, "Mobile app", [("{IMG}2025/06/screen-m2.png", "", "Mobile screen"), ("{IMG}2025/06/screen-m4.png", "", "Mobile screen"), ("{IMG}2025/06/screen-m8.png", "", "Mobile screen"), ("{IMG}2025/06/screen-m6.png", "", "Mobile screen"), ("{IMG}2025/06/screen-m44.png", "", "Mobile screen")], phones=True),
+      feat(5, "Mobile app", [("{IMG}2025/06/screen-m2.png", "", "Mobile screen"), ("{IMG}2025/06/screen-m4.png", "", "Mobile screen"), ("{IMG}2025/06/screen-m8.png", "", "Mobile screen"), ("{IMG}2025/06/screen-m6.png", "", "Mobile screen"), ("{IMG}2025/06/screen-m44.png", "", "Mobile screen")], phones=True, trim_mobile=True),
   ])))
 
 

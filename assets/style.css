@@ -243,9 +243,9 @@ a.card:hover .btn { gap: 14px; background: #000; }
 .feature-shots.two { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .feature-shots:not(.two) { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .feature-shots img { width: 100%; height: auto; display: block; border-radius: var(--r); box-shadow: 0 1px 2px rgba(20,20,30,.06), 0 18px 40px -24px rgba(20,20,30,.28); }
-.feature-shots.phones-shots { grid-template-columns: repeat(var(--n, 5), minmax(0, 1fr)); max-width: calc(var(--n, 5) * 230px); }
+.feature-shots.phones-shots { grid-template-columns: repeat(var(--n, 5), minmax(0, 1fr)); column-gap: clamp(20px, 4vw, 64px); width: 100%; max-width: calc(var(--n, 5) * 200px + (var(--n, 5) - 1) * 64px); margin-inline: auto; }
 .feature-shots.phones-shots img { box-shadow: none; border-radius: 0; background: none; }
-@media (max-width: 760px) { .feature-shots.two, .feature-shots:not(.two) { grid-template-columns: 1fr; } .feature-shots.phones-shots { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 760px) { .feature-shots.two, .feature-shots:not(.two) { grid-template-columns: 1fr; } .feature-shots.phones-shots { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 20px; max-width: 420px; } .feature-shots.trim-mobile > :last-child { display: none; } }
 .zoomable { cursor: zoom-in; transition: transform .25s ease, box-shadow .25s ease; }
 .zoomable:hover { transform: translateY(-2px); box-shadow: 0 1px 2px rgba(20,20,30,.06), 0 24px 48px -24px rgba(20,20,30,.34); }
 
