@@ -187,8 +187,13 @@
   });
 })();
 
-/* home: hello popup, once per visit */
+/* home: hello popup, once per visit, after 2 minutes on the site (counted across pages) */
 (function () {
+  var DELAY = 120000, start = Date.now();
+  try {
+    var saved = parseInt(sessionStorage.getItem('visitStart'), 10);
+    if (saved) start = saved; else sessionStorage.setItem('visitStart', String(start));
+  } catch (e) {}
   var pop = document.getElementById('hello-pop');
   if (!pop || window.matchMedia('(max-width: 760px)').matches) return;
   var KEY = 'helloPopSeen', seen = false;
@@ -205,7 +210,7 @@
     pop.hidden = false;
     requestAnimationFrame(function () { requestAnimationFrame(function () { pop.classList.add('open'); }); });
     document.addEventListener('keydown', onKey);
-  }, 2500);
+  }, Math.max(1500, DELAY - (Date.now() - start)));
   pop.querySelector('.hello-close').addEventListener('click', close);
   pop.querySelector('.hello-cta').addEventListener('click', close);
 })();
